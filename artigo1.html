@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+
+		<link rel="stylesheet" type="text/css" href="MyCSS.css">
+
+		<title>INFORMÁTICA SEM COMPLICAÇÃO</title>
+	</head>
+
+	<body>
+		<div class="principal">
+			<div class="cabecalho">
+				<div class="logo-cabecalho">
+					<a href="./">INFORMÁTICA SEM COMPLICAÇÃO</a>
+				</div>
+				
+				<div class="pesquisa">
+					<input type="text" />
+					<input type="submit" value="Pesquisar" />
+				</div>
+			</div>
+			<div class="menu">
+				<ul>
+                                        <li><a href=Index.html>Início</a></li>
+                                        <li><a href=Contato.html>Contato</a></li>
+				</ul>
+			</div>
+			<div class="corpo">
+				<div class="artigos">
+					<div class="espacamento">
+						<h1>Dicas para o home office</h1>
+						
+						<p>
+						
+Se você é iniciante, aposto que a sua cabeça está fervilhando com ideias, perguntas e suposições. Mas calma, todo passo deve ser dado com muita cautela.
+
+<h5>Identifique seu perfil de trabalho</h5>
+<p>Muitas pessoas se concentram apenas na possibilidade de trabalhar em casa, com horários mais flexíveis, e se esquecem de avaliar se esse é realmente o melhor caminho. O trabalho home office vai exigir muita disciplina e dedicação – isso é fundamental para ter um bom desempenho.</p>
+
+<h5>Escolha o melhor lugar para o home office</h5>
+<p>O home office pode ser desempenhado na sua casa, em um café, em uma praça ou até mesmo em um escritório compartilhado. Escolha o ambiente que mais se adequa ao seu estilo.</p>
+
+<h5>Variedade de trabalhos home office</h5>
+<p>Tenha em mente o tipo de trabalho que você vai desempenhar e veja a melhor maneira de conduzi-lo. Por exemplo: existem categorias de trabalho home office que vão te proporcionar uma agenda e dia a dia mais flexíveis. Outros tipos de trabalho são desempenhados junto a empresas e possuem horários mais rígidos.</p>
+
+<h5>Internet</h5>
+<p>Muitos tipos de trabalho à distância precisam de internet, e esse é um fator que deve ter uma atenção extra, seja nos momentos em que você estiver na sua casa ou em algum trabalho externo.</p>
+
+<h5>Itens e equipamentos indispensáveis</h5>
+<p>Confira essas dicas home office e saiba quais são os itens e equipamentos indispensáveis para o dia a dia de trabalho, como notebook, fone de ouvido, mouse, cadeira confortável e agenda ou planner.</p>
+
+<h5>Não trabalhe de pijama</h5>
+<p>Mesmo contando com a facilidade de desempenhar um trabalho no conforto da sua casa, nunca trabalhe de pijama. Essa simples prática pode interferir diretamente na sua produção – priorize roupas confortáveis e adequadas para um dia de trabalho.</p>
+
+<h5>Tenha uma rotina</h5>
+<p>Muitos profissionais que trabalham em home office acabam se perdendo na rotina. Por isso, anote seus horários e afazeres ao longo do dia. Tenha em mente uma meta de produção diária e não abra mão de momentos de lazer, como a prática de exercícios físicos.</p>
+
+						</p>
+									
+					</div>
+				</div>
+				<div class="barra-lateral">
+					<div id="app"></div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      template: `
+        <div class="container">
+          <h1>Comentários</h1>
+          <hr />
+          <div class="form-todo form-group">
+            <p>
+              <input placeholder="nome" type="text" name="author" class="form-control" v-model="name" />
+            </p>
+            <p>
+              <textarea placeholder="Comentário" name="message"  class="form-control" v-model="message"></textarea>
+            </p>
+            <button v-on:click="addComment" type="submit" class="btn btn-primary">Enviar</button>
+          </div>
+          <div class="list-group">
+            <div class="list-group-item" v-for="(comment, index) in allComments">
+              <span class="comment__author">Autor: <strong>{{ comment.name }}</strong></span>
+              <p>{{ comment.message }}</p>
+              <div>
+                <a href="#" title="Excluir" v-on:click.prevent="removeComment(index)">Excluir</a>
+              </div>
+            </div>
+          </div>
+          <hr />
+        </div>
+      `,
+      data() {
+        return {
+          comments: [],
+          name: '',
+          message: '' 
+        }
+      },
+      methods: {
+        addComment() {
+          if (this.message.trim() === '') {
+            return;
+          }
+        
+          this.comments.push({
+            name: this.name,
+            message: this.message
+          });
+
+          this.name = '';
+          this.message = '';
+        },
+        removeComment(index) {
+          this.comments.splice(index, 1);
+        }
+      },
+      computed: {
+        allComments() {
+          return this.comments.map(comment => ({
+            ...comment,
+            name: comment.name.trim() === '' ? 'Anônimo' : comment.name
+          }))
+        }
+      },
+      watch: {
+        comments(val) {
+          console.log('val', val)
+        }
+      }
+    })
+  </script>
+				</div>
+			</div>
+			<div class="rodape">
+			</div>
+		</div>
+				</div>
+			</div>
+			<div class="rodape">
+				MMACAN INFORMÁTICA
+			</div>
+		</div>
+	</body>
+</html>
