@@ -3,25 +3,11 @@ let vetorS = [13, 31, 3, 21, 14, 6, 1, 42, 23, 32];
 
 let vetorPush = vetorR.push(...vetorS);
 
-function resultado(vetor){
-    let sorted = vetor.sort();
-    let odd;
-    sorted.forEach((element, index) => {
-        let thisElement = sorted[index];
-        let nextEle = sorted[index +1];
-
-        if (thisElement == nextEle){
-            //index++;
-        } else {
-            odd = thisElement;
-        }
-    })
-    return odd;
-    
-}
-
-console.log(resultado(vetorR));
-
 console.log(vetorPush);
 
 console.log(vetorR);
+
+var vetorX = vetorR.filter(function(el, i) {
+    return vetorR.indexOf(el) != i;
+});
+console.log(vetorX);
