@@ -21,33 +21,49 @@ var total = {};
 cod = readlineSync.question('Digite o código do produto: ');
 qtd = readlineSync.question('Digite a quantidade: ');
 
-console.log(cod);
-console.log(qtd);
-
 const cardarpio = [
     {
-        especificacao: 'Cachorro quente',
+        especificacao: '100',
         preco: 1.20
     },
     {
-        especificacao: 'Bauru Simples',
+        especificacao: '101',
         preco: 1.30
     },
         {
-        especificacao: 'Bauru com ovo',
+        especificacao: '102',
         preco: 1.50
     },
         {
-        especificacao: 'Hambúrger',
+        especificacao: '103',
         preco: 1.20
     },
         {
-        especificacao: 'Cheeseburguer',
+        especificacao: '104',
         preco: 1.30
     },
         {
-        especificacao: 'Refrigerante',
+        especificacao: '105',
         preco: 1.00
     }
 ]
 
+if (cod == cardarpio[0].especificacao){
+  total = qtd * cardarpio[0].preco;
+  console.log("Valor do seu pedido = " + total);
+}else if(cod == cardarpio[1].especificacao){
+   total = qtd * cardarpio[1].preco;
+  console.log("Valor do seu pedido = " + total);
+}else if(cod == cardarpio[2].especificacao){
+   total = qtd * cardarpio[2].preco;
+  console.log("Valor do seu pedido = " + total);
+}else if(cod == cardarpio[3].especificacao){
+   total = qtd * cardarpio[3].preco;
+  console.log("Valor do seu pedido = " + total);
+}else if(cod == cardarpio[4].especificacao){
+   total = qtd * cardarpio[4].preco;
+  console.log("Valor do seu pedido = " + total);
+}else if(cod == cardarpio[5].especificacao){
+  total = qtd * cardarpio[5].preco;
+  console.log("Valor do seu pedido = " + total);
+}
